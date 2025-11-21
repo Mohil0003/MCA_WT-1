@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab - 10</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .navbar {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+        }
+
+        .sidebar {
+            background-color: #f4f4f4;
+            padding: 1rem;
+            width: 30%;
+            float: left;
+        }
+
+        .content {
+            flex: 1;
+            padding: 1rem;
+            float: right;
+            width: 65%;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        a{
+            display: block;
+            color: #333;
+            text-decoration: none;
+            padding: 0.5rem 0;
+            text-align: center;
+        }
+        .box{
+            display: flex;
+            flex-direction: row;
+            height: calc(100vh - 100px); /* Adjust height to fit the footer */
+        }
+
+        @media (max-width:600px){ /* for Mobile Devices */
+            .navbar{
+                text-align: center;
+                padding: 0.5rem;
+                font-size: 1.2rem;
+                background-color: #08bef5;
+            }
+            .sidebar {
+                width: 20%;
+                float: none;
+                background-color: aqua;
+            }
+
+            .content {
+                width: 100%;
+                float: none;
+                background-color: rgb(103, 245, 64);
+            }
+            .footer{
+                position: relative;
+                bottom: 0;
+                width: 100%;
+                background-color: #f705bb;
+            }
+        }
+
+
+        @media (min-width:601px) and (max-width:1024px){ /* for Tablets */
+            .navbar{
+                text-align: center;
+                padding: 0.5rem;
+                font-size: 1.2rem;
+                background-color: #ff0000;
+            }
+            .sidebar {
+                width: 25%;
+                float: none;
+                background-color: rgb(15, 94, 204);
+            }
+
+            .content {
+                width: 75%;
+                float: none;
+                background-color: rgb(206, 234, 23);
+            }
+            .footer{
+                position: relative;
+                bottom: 0;
+                width: 100%;
+                background-color: #a605f7;
+            }
+        }
+
+        @media (min-width:1025px){ /* for Desktop */
+            .navbar{
+                text-align: center;
+                padding: 0.5rem;
+                font-size: 1.2rem;
+                background-color: #566a77;
+            }
+            .sidebar {
+                width: 20%;
+                float: left;
+                background-color: rgb(101, 102, 180);
+            }
+
+            .content {
+                width: 80%;
+                float: right;
+                background-color: rgb(35, 204, 125);
+            }
+            .footer{
+                position: relative;
+                bottom: 0;
+                width: 100%;
+                background-color: #62204f;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+           <h1>Navigation Bar</h1>
+        </div>
+
+        <div class="box">
+
+        <div class="sidebar">
+            <a href="https://www.darshan.ac.in/">Dashboard</a>
+            <a href="https://www.darshan.ac.in/">Home</a>    
+            <a href="https://www.darshan.ac.in/">About</a>
+            <a href="https://www.darshan.ac.in/">Contact</a>
+        </div>
+
+        <div class="content">
+            <h2>Welcome to the Dashboard</h2>
+            <p>This is the main content area where you can find various information and links.</p>
+            <p>Feel free to explore the links in the sidebar to navigate through different sections.</p>
+        </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2023 Your Company. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

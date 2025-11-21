@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab-9</title>
+    <style>
+        .animate-bg{
+            animation-name: bgname;
+            animation-duration: 3s;
+            animation-delay: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: forwards;
+        }
+
+        @keyframes bgname {
+            from {
+                background-color: red;
+            }
+            to {
+                background-color: yellow;
+            }
+
+        }
+
+        .animate-square {
+            background-color: blue;
+            color: white;
+            animation-name: squareAnimation;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-direction: forwards;
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+
+        @keyframes squareAnimation {
+            0%{
+                top: 0px;
+                left: 0px;
+            }
+            25%{
+                top: 0px;
+                left: 100px;
+            }
+            50%{
+                top: 100px;
+                left: 100px;
+            }
+            75%{
+                top: 100px;
+                left: 0px;
+            }
+            100%{
+                top: 0px;
+                left: 0px;
+            }
+        }
+
+        .animate-circle{
+            background-color: green;
+            color: white;
+            animation-name: circleAnimation;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-direction: reverse;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: relative;
+            animation-timing-function: ease-in-out;
+        }
+
+        @keyframes circleAnimation {
+            from{
+                top:200px;
+                left:0px;
+            }
+            to{
+                top: 200px;;
+                left:500px;;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="animate-bg">
+        This is a box
+    </div>
+
+    <div class="animate-square">
+        This is a square
+    </div>
+
+    <div class="animate-circle">
+    </div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab - 10</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .navbar {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: row;
+            height: calc(100vh - 100px); /* Adjust height to fit the footer */
+        }
+
+        .sidebar {
+            background-color: #f4f4f4;
+            padding: 1rem;
+            width: 30%;
+        }
+
+        .content {
+            flex: 1;
+            padding: 1rem;
+            width: 65%;
+        }
+
+        .footer {
+            background-color: #75f16a;
+    
+            text-align: center;
+        
+        }
+
+        a {
+            display: block;
+            color: #333;
+            text-decoration: none;
+            padding: 0.5rem 0;
+            text-align: center;
+            font-size: larger;
+        }
+
+        p{
+            font-size: 20px;
+            color: #333;
+            
+        }
+
+        @media (max-width: 600px) { /* for Mobile Devices */
+            .sidebar{
+                width: 20%;
+                font-size: medium;
+                font-family: 'Gill Sans';
+                font-weight: bold;
+                background-color: aquamarine;
+            }
+
+            .content{
+                width: 80%;
+                font-size: medium;
+                font-family: 'Gill Sans';
+                font-weight: bold;
+                background-color: #29c1df;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <h1>Lab - 10</h1>
+        </div>
+        <div class="box">
+            <div class="sidebar">
+                <h2>Sidebar</h2>
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+            <div class="content">
+                <h2>Content Area</h2>
+                <p>Darshan University - Rajkot Gujarat India</p>
+                <img src="./../DU Logo.png" alt="DU Logo" style="width: 100%; height: 100%;">
+            </div>
+        </div>
+        <div class="footer">
+            <p>&copy; 2023 Lab - 10</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab - 12</title>
+</head>
+
+<body>
+    <script>
+        n = parseInt(prompt("Enter number of terms"));
+        a = 0;
+        sum = 1;
+        for (i = 1; i <= n; i++) {
+            document.write(a + " ");
+            x = sum + a;
+            a = sum;
+            sum = x;
+        }
+    </script>
+</body>
+
+</html>

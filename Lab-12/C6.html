@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab - 12</title>
+</head>
+
+<body>
+    <script>
+        n = parseInt(prompt("Enter Value"));
+        z = n;
+        a = n.toString().length;
+        sum = 0;
+        while (n != 0) {
+            x = n % 10;
+            sum = sum + Math.pow(x, a);
+            n = parseInt(n / 10);
+        }
+
+        if (sum == z) {
+            document.write("Armstrong");
+        } else {
+            document.write("Not Armstrong");
+        }
+    </script>
+</body>
+
+</html>

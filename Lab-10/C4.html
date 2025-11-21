@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Page with Sidebar</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      background-color: #333;
+      color: white;
+      width: 250px;
+      padding: 1rem;
+    }
+
+    .content {
+      flex: 1;
+      padding: 1rem;
+    }
+
+
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none;
+      }
+
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Responsive Layout</h1>
+  </header>
+
+
+  <div class="container">
+    <aside class="sidebar" id="sidebar">
+      <h2>Sidebar</h2>
+      <p>This content is hidden on small screens.</p>
+    </aside>
+
+    <main class="content">
+      <h2>Main Content</h2>
+      <p>This is the main area of the webpage.</p>
+    </main>
+  </div>
+
+
+</body>
+</html>

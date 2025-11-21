@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab -13</title>
+</head>
+
+<body>
+
+    <script>
+
+        let str = prompt("Enter string with two 'a' :");
+        let str2;
+
+        let fidx = str.indexOf('a');
+        let lidx = str.lastIndexOf('a');
+
+        if (fidx == -1 || lidx == -1) {
+            alert("'a' is not found in given string !");
+        } else if (fidx == lidx) {
+            alert("only one 'a' is found in given string !");
+        } else {
+            str2 = str.substring(fidx + 1, lidx);
+        }
+
+        document.write("Given string : " + str + "<br>");
+        document.write("First occurrence of 'a' is at position : " + (fidx + 1) + "<br>");
+        document.write("Last occurrence of 'a' is at position : " + (lidx + 1) + "<br>");
+        document.write("String between them :" + str2);
+
+    </script>
+</body>
+
+</html>

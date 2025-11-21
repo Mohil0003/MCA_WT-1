@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lab-11</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background-color: #f4f4f9;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    /* Styling buttons with :hover */
+    button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Styling form inputs with :focus */
+    input[type="text"],
+    input[type="email"] {
+      padding: 8px;
+      width: 250px;
+      margin: 10px 0;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus {
+      border-color: #007bff;
+      outline: none;
+      background-color: #e6f0ff;
+    }
+
+    /* Styling list items using :nth-child */
+    .styled-list li:nth-child(odd) {
+      background-color: #e0e0e0;
+    }
+
+    .styled-list li:nth-child(even) {
+      background-color: #ffffff;
+    }
+
+    .styled-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    .styled-list li {
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CSS Pseudo-Class Styling</h1>
+
+  <h2>Button with :hover</h2>
+  <button>Hover Over Me</button>
+
+  <h2>Form Inputs with :focus</h2>
+  <form>
+    <input type="text" placeholder="Enter your name" /><br />
+    <input type="email" placeholder="Enter your email" />
+  </form>
+
+  <h2>List with :nth-child</h2>
+  <ul class="styled-list">
+    <li>Item One</li>
+    <li>Item Two</li>
+    <li>Item Three</li>
+    <li>Item Four</li>
+    <li>Item Five</li>
+  </ul>
+
+</body>
+</html>

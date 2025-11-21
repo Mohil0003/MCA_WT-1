@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab - 16</title>
+
+    <style>
+        #submitBtn{
+            margin-top: 30px;
+            position: relative;
+            left: 120px;
+        }
+    </style>
+</head>
+<body>
+    <table border="2">
+        <tr>
+            <td><label>Name :</label></td>
+            <td><input type="text" placeholder="Enter Your Name" id="name"></td>
+        </tr>
+        <tr>
+            <td><label>Email :</label></td>
+            <td><input type="email" placeholder="Enter Your Email" id="email"></td>
+        </tr>
+        <tr>
+            <td><label>Password :</label></td>
+            <td><input type="password" placeholder="" id="pass"></td>
+        </tr>
+        <tr>
+            <td><label>Comfirm Password :</label></td>
+            <td><input type="password" placeholder="" id="pass2"></td>
+        </tr>
+        <tr>
+            <td><label>Age :</label></td>
+            <td><input type="number" placeholder="" id="age"></td>
+        </tr>
+        <tr>
+            <td><label>Enrollment No :</label></td>
+            <td><input type="number" placeholder="" id="en"></td>
+        </tr>
+    </table>
+
+    <button onclick="submit()" id="submitBtn">Submit</button>
+
+
+    <script>
+        function submit(){
+            a = document.getElementById('name').value
+            b = document.getElementById('email').value
+            c = document.getElementById('pass').value
+            d = document.getElementById('pass2').value
+            e = document.getElementById('age').value
+            f = document.getElementById('en').value
+
+            var a1 = "[a-zA-Z]{8,}"
+            var b1 = "[a-z0-9]*@gmail.com"
+            var c1 = "[a-z0-9]{8,}"
+            var d1 = "[a-z0-9]{8,}"
+            var e1 = "[0-9]{1,2}"
+            var f1 = "[0-9]{11}"
+
+            var reg1 = new RegExp(a1);
+            var reg2 = new RegExp(b1);
+            var reg3 = new RegExp(c1);
+            var reg4 = new RegExp(d1);
+            var reg5 = new RegExp(e1);
+            var reg6 = new RegExp(f1);
+
+            if(reg1.test(a)){
+                alert('Valid Name')
+            } else{
+                alert('Invalid Name')
+                document.getElementById('name').value=''
+                return;
+            }
+            if(reg2.test(b)){
+                alert('Valid Email')
+            } else{
+                alert('Invalid Email')
+                document.getElementById('email').value=''
+                return;
+            }
+            if(reg3.test(c)){
+                alert('Valid Password')
+            } else{
+                alert('Invalid Password')
+                document.getElementById('pass').value=''
+                return;
+            }
+            if(reg4.test(d) && d==c){
+                alert('Valid Confirm Password')
+            } else{
+                alert('Invalid Confirm Password')
+                document.getElementById('pass2').value=''
+                return;
+            }
+            if(reg5.test(e) && e>18){
+                alert('Valid Age')
+            } else{
+                alert('Invalid Age')
+                document.getElementById('age').value=''
+                return;
+            }
+            if(reg6.test(f)){
+                alert('Valid Enrolment')
+            } else{
+                alert('Invalid Enrollment')
+                document.getElementById('en').value=''
+                return;
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -4,7 +4,7 @@ Maintained by: Mohil Parmar & Daksh Bhalara
 
 ---
 
-## 🎯 Project Overview  
+## 🎯 Overview  
 This repository contains the **Web Technology (WT-1) Lab Manual** and related practice materials for MCA students at Darshan University.  
 The goal is to provide students with clear, structured lab exercises and references for learning core web technologies.
 
@@ -49,3 +49,4 @@ This lab focuses on **fundamental web technologies** only:
 1. Clone or download the repository:
    ```bash
    git clone https://github.com/Mohil0003/MCA_WT-1.git
+

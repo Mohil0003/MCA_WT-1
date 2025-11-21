@@ -16,8 +16,6 @@ This repo is maintained by Teaching Assistants **Mohil Parmar** and **Daksh Bhal
 - **Lab Manual.pdf** – Official lab instructions and exercises  
 - All folders/resources related to Web Technology practical sessions  
 
-*(Add more folders such as `solutions/`, `assignments/`, or `examples/` as the project grows.)*
-
 ---
 
 ## 🛠 Tech Stack Covered  
@@ -47,5 +45,6 @@ This lab focuses on **fundamental web technologies** only:
 1. Clone or download the repository:
    ```bash
    git clone https://github.com/Mohil0003/MCA_WT-1.git
+
 
 

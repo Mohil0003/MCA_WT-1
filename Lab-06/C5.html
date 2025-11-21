@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lab - 6</title>
+</head>
+<body>
+
+  <h1>Feedback Form</h1>
+
+  <form>
+
+    <p>
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name" minlength="3" maxlength="30" required>
+    </p>
+
+    <p>
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required>
+    </p>
+
+    <p>
+      <label for="rating">Rate our service (1 to 5):</label><br>
+      <input type="number" id="rating" name="rating" min="1" max="5" required>
+    </p>
+
+    <p>
+      <label for="comments">Comments (10–300 characters):</label><br>
+      <textarea id="comments" name="comments" minlength="10" maxlength="300" required></textarea>
+    </p>
+
+    <p>
+      <button type="submit">Submit Feedback</button>
+    </p>
+
+  </form>
+
+</body>
+</html>

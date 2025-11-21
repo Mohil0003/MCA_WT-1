@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Lab - 17</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .form-container {
+      max-width: 500px;
+      margin: auto;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin: 8px 0;
+      box-sizing: border-box;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+    }
+    button {
+      padding: 10px 15px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+<h2 style="text-align: center;">Student Registration Form</h2>
+
+<div class="form-container">
+  <form id="regForm" onsubmit="return validateForm()">
+    <label>Full Name:</label>
+    <input type="text" id="name" placeholder="Enter your full name">
+    <div class="error" id="nameError"></div>
+
+    <label>Email:</label>
+    <input type="email" id="email" placeholder="Enter your email">
+    <div class="error" id="emailError"></div>
+
+    <label>Password:</label>
+    <input type="password" id="password" placeholder="Create a password">
+    <div class="error" id="passwordError"></div>
+
+    <label>Gender:</label>
+    <input type="radio" name="gender" value="Male" id="male"> Male
+    <input type="radio" name="gender" value="Female" id="female"> Female
+    <div class="error" id="genderError"></div>
+
+    <label>Course:</label>
+    <select id="course">
+      <option value="">--Select Course--</option>
+      <option value="B.Tech">B.Tech</option>
+      <option value="B.Sc">B.Sc</option>
+      <option value="B.Com">B.Com</option>
+    </select>
+    <div class="error" id="courseError"></div>
+
+    <br>
+    <button type="submit">Register</button>
+  </form>
+</div>
+
+<script>
+  function validateForm() {
+    // Get form values
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const genderMale = document.getElementById("male").checked;
+    const genderFemale = document.getElementById("female").checked;
+    const course = document.getElementById("course").value;
+
+    let isValid = true;
+
+    // Clear previous errors
+    document.getElementById("nameError").textContent = "";
+    document.getElementById("emailError").textContent = "";
+    document.getElementById("passwordError").textContent = "";
+    document.getElementById("genderError").textContent = "";
+    document.getElementById("courseError").textContent = "";
+
+    // Name validation
+    if (name === "") {
+      document.getElementById("nameError").textContent = "Name is required";
+      isValid = false;
+    }
+
+    // Email validation
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (!email.match(emailPattern)) {
+      document.getElementById("emailError").textContent = "Enter a valid email";
+      isValid = false;
+    }
+
+    // Password validation
+    if (password.length < 6) {
+      document.getElementById("passwordError").textContent = "Password must be at least 6 characters";
+      isValid = false;
+    }
+
+    // Gender validation
+    if (!genderMale && !genderFemale) {
+      document.getElementById("genderError").textContent = "Select your gender";
+      isValid = false;
+    }
+
+    // Course validation
+    if (course === "") {
+      document.getElementById("courseError").textContent = "Select a course";
+      isValid = false;
+    }
+
+    return isValid;
+  }
+</script>
+
+</body>
+</html>

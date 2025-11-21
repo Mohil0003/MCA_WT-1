@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lab - 18</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+    #output {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    button {
+      padding: 10px 15px;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>JavaScript Class Demonstration</h2>
+
+<button onclick="showStudentInfo()">Show Student Info</button>
+
+<div id="output">Result will appear here...</div>
+
+<script>
+  // Class definition
+  class Student {
+    constructor(name, rollNo, course) {
+      this.name = name;
+      this.rollNo = rollNo;
+      this.course = course;
+    }
+
+    getInfo() {
+      return `Name: ${this.name}, Roll No: ${this.rollNo}, Course: ${this.course}`;
+    }
+  }
+
+  // Function to demonstrate class usage
+  function showStudentInfo() {
+    const student1 = new Student("Alice", 101, "B.Tech");
+    document.getElementById("output").textContent = student1.getInfo();
+  }
+</script>
+
+</body>
+</html>

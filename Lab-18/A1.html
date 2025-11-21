@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab - 18</title>
+    <style>
+        #box{
+            height: 30px;
+            width: 30px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        Hyy , It's Me !!!
+    </div>
+
+    <script>
+        function printResult(temp){
+            document.getElementById('box').innerHTML = temp;
+        }
+
+        function multiply(n1 , n2 , callBack){
+            let ans = n1*n2;
+            document.write("ANSWER: ")
+            callBack(ans);
+        }
+
+        multiply(3,3, printResult)
+    </script>
+</body>
+</html>

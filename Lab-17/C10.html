@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lab - 17</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 50px;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+    #output {
+      font-size: 24px;
+      margin-top: 40px;
+      color: rgb(223, 223, 223);
+    }
+  </style>
+</head>
+<body>
+
+<h2>Press a Key on Your Keyboard</h2>
+<div id="output">Waiting for input...</div>
+
+<script>
+  const output = document.getElementById("output");
+
+  document.addEventListener("keydown", function(event) {
+    const key = event.key.toLowerCase();
+    const vowels = ['a', 'e', 'i', 'o', 'u'];
+    if (vowels.includes(key)) {
+      output.textContent = `You pressed the vowel: "${key.toUpperCase()}"`;
+    } else {
+      output.textContent = `You pressed: "${event.key}" (Not a vowel)`;
+    }
+  });
+
+  document.addEventListener("keyup", function() {
+    document.body.style.backgroundColor = "blue";
+  });
+</script>
+
+</body>
+</html>

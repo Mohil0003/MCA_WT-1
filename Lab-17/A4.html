@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lab - 17</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    input, select, button {
+      margin: 10px 0;
+      padding: 8px;
+      width: 100%;
+      max-width: 300px;
+    }
+    #log {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background: #f9f9f9;
+      min-height: 100px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Form Event Detector</h2>
+
+<form id="myForm">
+  <input type="text" id="name" placeholder="Enter your name">
+  <select id="selectBox">
+    <option value="">Select option</option>
+    <option value="one">One</option>
+    <option value="two">Two</option>
+  </select>
+  <button type="submit">Submit</button>
+</form>
+
+<div id="log"><strong>Event Log:</strong></div>
+
+<script>
+  const logDiv = document.getElementById("log");
+
+  function logEvent(eventName, element) {
+    const time = new Date().toLocaleTimeString();
+    logDiv.innerHTML += `<br><b>[${time}]</b> Event <code>${eventName}</code> fired on <code>${element.id}</code>`;
+  }
+
+  const form = document.getElementById("myForm");
+  const nameInput = document.getElementById("name");
+  const selectBox = document.getElementById("selectBox");
+
+  // Attach listeners
+  nameInput.addEventListener("focus", () => logEvent("focus", nameInput));
+  nameInput.addEventListener("blur", () => logEvent("blur", nameInput));
+  nameInput.addEventListener("change", () => logEvent("change", nameInput));
+  nameInput.addEventListener("input", () => logEvent("input", nameInput));
+
+  selectBox.addEventListener("change", () => logEvent("change", selectBox));
+  selectBox.addEventListener("focus", () => logEvent("focus", selectBox));
+  selectBox.addEventListener("blur", () => logEvent("blur", selectBox));
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault(); // prevent actual form submission
+    logEvent("submit", form);
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lab - 18</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      max-width: 400px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+    }
+    #selectedValues {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Select Roll Numbers</h2>
+
+<form id="rollForm">
+  <label><input type="checkbox" value="101" /> 101</label><br />
+  <label><input type="checkbox" value="102" /> 102</label><br />
+  <label><input type="checkbox" value="103" /> 103</label><br />
+  <label><input type="checkbox" value="104" /> 104</label><br />
+  <label><input type="checkbox" value="105" /> 105</label><br />
+</form>
+
+<div id="selectedValues">Selected Roll Numbers: None</div>
+
+<script>
+  const checkboxes = document.querySelectorAll("#rollForm input[type='checkbox']");
+  const display = document.getElementById("selectedValues");
+
+  checkboxes.forEach(chk => {
+    chk.addEventListener("change", () => {
+      const selected = [];
+      checkboxes.forEach(box => {
+        if (box.checked) selected.push(box.value);
+      });
+      display.textContent = selected.length
+        ? "Selected Roll Numbers: " + selected.join(", ")
+        : "Selected Roll Numbers: None";
+    });
+  });
+</script>
+
+</body>
+</html>

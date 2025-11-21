@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lab - 18</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      text-align: center;
+    }
+    #output {
+      margin-top: 30px;
+      font-size: 24px;
+      color: #007BFF;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Click Anywhere on the Page</h2>
+<div id="output">Waiting for mouse click...</div>
+
+<script>
+  document.addEventListener("mousedown", function(event) {
+    const output = document.getElementById("output");
+
+    if (event.button === 0) {
+      output.textContent = "Left Clicked";
+    } else if (event.button === 2) {
+      output.textContent = "Right Clicked";
+    }
+  });
+
+  // Prevent default context menu on right-click
+  document.addEventListener("contextmenu", function(event) {
+    event.preventDefault();
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lab - 18</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+    button {
+      margin: 5px;
+      padding: 10px 15px;
+    }
+    #output {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Arrow Function Examples</h2>
+
+<button onclick="greetUser()">Greet</button>
+<button onclick="showSum()">Sum of 5 + 10</button>
+<button onclick="showSquare()">Square of 4</button>
+
+<div id="output">Result will appear here...</div>
+
+<script>
+  // Arrow function to return a greeting
+  const greet = () => "Hello from an Arrow Function!";
+
+  // Arrow function to add two numbers
+  const add = (a, b) => a + b;
+
+  // Arrow function with a single parameter
+  const square = x => x * x;
+
+  // Trigger functions
+  function greetUser() {
+    document.getElementById("output").textContent = greet();
+  }
+
+  function showSum() {
+    const result = add(5, 10);
+    document.getElementById("output").textContent = "5 + 10 = " + result;
+  }
+
+  function showSquare() {
+    const result = square(4);
+    document.getElementById("output").textContent = "Square of 4 = " + result;
+  }
+</script>
+
+</body>
+</html>

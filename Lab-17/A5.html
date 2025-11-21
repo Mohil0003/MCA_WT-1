@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lab - 17</title>
+  <style>
+    #myBox {
+      width: 300px;
+      height: 100px;
+      background-color: lightblue;
+      color: black;
+      font-size: 18px;
+      text-align: center;
+      line-height: 100px;
+      margin: 20px auto;
+      transition: all 0.3s ease;
+    }
+    button {
+      margin: 5px;
+      padding: 10px 15px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Change HTML Element Lab - 17 Using JavaScript</h2>
+
+<div id="myBox">Watch me change!</div>
+
+<div style="text-align: center;">
+  <button onclick="changeColor()">Change Background</button>
+  <button onclick="changeText()">Change Text</button>
+  <button onclick="changeFont()">Change Font Size</button>
+  <button onclick="toggleVisibility()">Toggle Visibility</button>
+</div>
+
+<script>
+  function changeColor() {
+    const box = document.getElementById("myBox");
+    box.style.backgroundColor = box.style.backgroundColor === "lightblue" ? "lightgreen" : "lightblue";
+  }
+
+  function changeText() {
+    const box = document.getElementById("myBox");
+    box.textContent = box.textContent === "Watch me change!" ? "Text Changed!" : "Watch me change!";
+  }
+
+  function changeFont() {
+    const box = document.getElementById("myBox");
+    box.style.fontSize = box.style.fontSize === "18px" ? "26px" : "18px";
+  }
+
+  function toggleVisibility() {
+    const box = document.getElementById("myBox");
+    box.style.display = box.style.display === "none" ? "block" : "none";
+  }
+</script>
+
+</body>
+</html>

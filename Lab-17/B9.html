@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lab - 17</title>
+  <style>
+    #box {
+      width: 300px;
+      height: 200px;
+      background-color: lightblue;
+      border: 2px solid #333;
+      margin: 20px auto;
+      text-align: center;
+      line-height: 200px;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+    #log, #keyCode {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 16px;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+
+<h2 style="text-align:center;">JavaScript Mouse & Keyboard Event Handler</h2>
+
+<div id="box">Hover or Click Me</div>
+
+<div id="log">Mouse Event Log: <i>None yet</i></div>
+<div id="keyCode">Key Code: <i>Press a key</i></div>
+
+<script>
+  const box = document.getElementById("box");
+  const log = document.getElementById("log");
+  const keyCodeDisplay = document.getElementById("keyCode");
+
+  box.addEventListener("click", () => {
+    log.textContent = "Mouse Event Log: Click";
+    box.style.backgroundColor = "lightgreen";
+  });
+
+  box.addEventListener("dblclick", () => {
+    log.textContent = "Mouse Event Log: Double Click";
+    box.style.backgroundColor = "lightcoral";
+  });
+
+  box.addEventListener("mouseenter", () => {
+    log.textContent = "Mouse Event Log: Mouse Enter";
+    box.style.backgroundColor = "lightyellow";
+  });
+
+  box.addEventListener("mouseleave", () => {
+    log.textContent = "Mouse Event Log: Mouse Leave";
+    box.style.backgroundColor = "lightblue";
+  });
+
+  box.addEventListener("mousemove", () => {
+    log.textContent = "Mouse Event Log: Mouse Move";
+  });
+
+  // Keyboard keycode display
+  document.addEventListener("keydown", (e) => {
+    keyCodeDisplay.textContent = `Key Code: ${e.key} (${e.keyCode})`;
+  });
+</script>
+
+</body>
+</html>

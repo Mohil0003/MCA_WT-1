@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab - 17</title>
+
+    <style>
+        .myTable {
+            margin-top: 100px;
+            background-color: rgb(203, 210, 201);
+            height: 100px;
+            width: 100%;
+        }
+
+        .btn {
+            background-color: rgb(228, 239, 237);
+            width: 60px;
+            position: relative;
+            left: 180px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="txtName" placeholder="Enter Name" />
+    <input type="number" id="txtRollno" placeholder="Enter Roll No" />
+
+    <button onclick="myAdd()" id="add">Add</button>
+
+    <div id="result">
+    </div>
+
+
+    <script>
+
+        e = 0;
+        index = -1;
+
+
+
+
+
+        a = [
+            {
+                name: "Mohil",
+                rollno: 119
+            },
+            {
+                name: "Daksh",
+                rollno: 120
+            }
+        ]
+        function display() {
+            let table = document.getElementById('result')
+            let htmlTable = '<table border="1" class="myTable">'
+            for (i = 0; i < a.length; i++) {
+                htmlTable += '<tr class="MyRow">'
+                htmlTable += '<td>' + a[i].name + '</td>'
+                htmlTable += '<td>' + a[i].rollno + '</td>'
+                htmlTable += '<td> <input type="button" value="Delete" onclick="myDelete(' + i + ')" class="btn"/> </td>'
+                htmlTable += '<td> <input type="button" value="Edit" onclick="myEdit(' + i + ')" class="btn"/> </td>'
+                htmlTable += '</tr>'
+
+            }
+            htmlTable += '</table>'
+            table.innerHTML = htmlTable
+        }
+
+        display()
+        function myAdd() {
+            if (e == 0) {
+                obj =
+                {
+                    name: document.getElementById('txtName').value,
+                    rollno: document.getElementById('txtRollno').value
+                }
+
+                a.push(obj);
+                display();
+
+                document.getElementById('txtName').value = ""
+                document.getElementById('txtRollno').value = ""
+            } else {
+                a[index].name = document.getElementById('txtName').value
+                a[index].rollno = document.getElementById('txtRollno').value
+                e = 0;
+                display()
+                document.getElementById('txtName').value = ""
+                document.getElementById('txtRollno').value = ""
+                document.getElementById('add').innerHTML = "Add"
+            }
+        }
+
+        function myDelete(i) {
+            a.splice(i, 1)
+            display()
+        }
+
+        function myEdit(i) {
+            document.getElementById('txtName').value = a[i].name
+            document.getElementById('txtRollno').value = a[i].rollno
+            document.getElementById('add').innerHTML = 'Edit'
+            e = 1;
+            index = i;
+        }
+
+    </script>
+</body>
+
+</html>
